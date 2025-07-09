@@ -1,0 +1,78 @@
+{
+  "name": "@octohash/eslint-config",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.12.4",
+  "description": "ESLint configuration based on @antfu/eslint-config, optimized for application development. Includes built-in support for Vue, TypeScript, and Tailwind CSS",
+  "author": "jinghaihan",
+  "license": "MIT",
+  "homepage": "https://github.com/jinghaihan/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinghaihan/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jinghaihan/eslint-config/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "linter"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown --clean --dts",
+    "typecheck": "tsc",
+    "test": "vitest",
+    "lint": "eslint",
+    "commit": "czg",
+    "deps": "taze major -I",
+    "release": "bumpp && pnpm publish --no-git-checks",
+    "catalog": "pncat",
+    "prepare": "npx simple-git-hooks",
+    "bootstrap": "pnpm install",
+    "preinstall": "npx only-allow pnpm",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "catalog:lint",
+    "eslint-plugin-format": "catalog:lint",
+    "eslint-plugin-tailwindcss": "catalog:lint",
+    "local-pkg": "catalog:node",
+    "pathe": "catalog:node"
+  },
+  "devDependencies": {
+    "@octohash/eslint-config": "workspace:*",
+    "@octohash/tsconfig": "catalog:dev",
+    "@types/node": "catalog:types",
+    "bumpp": "catalog:cli",
+    "czg": "catalog:cli",
+    "eslint": "catalog:lint",
+    "eslint-flat-config-utils": "catalog:lint",
+    "lint-staged": "catalog:lint",
+    "pncat": "catalog:cli",
+    "simple-git-hooks": "catalog:lint",
+    "taze": "catalog:cli",
+    "tsdown": "catalog:build",
+    "typescript": "catalog:dev",
+    "vitest": "catalog:test"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
