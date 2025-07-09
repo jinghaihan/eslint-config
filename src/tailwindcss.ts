@@ -11,13 +11,15 @@ export function tailwindCSS(dir?: string) {
   if (!installed)
     return
 
-  dir = dir ?? process.cwd()
+  const config = findTailwindImportCSS(dir ?? process.cwd())
+  if (!config)
+    return
 
   return {
     ...tailwindPlugin.configs['flat/recommended'],
     settings: {
       tailwindcss: {
-        config: findTailwindImportCSS(dir),
+        config,
       },
     },
   }
