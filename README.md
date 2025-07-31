@@ -1,12 +1,12 @@
 # @octohash/eslint-config
 
 [![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![bundle][bundle-src]][bundle-href]
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
 A comprehensive ESLint configuration package optimized for **application development**, built on top of [@antfu/eslint-config](https://github.com/antfu/eslint-config). This configuration provides a robust foundation for modern web applications with built-in support for Vue, TypeScript, and **Tailwind CSS v4**.
+
+Since the target is web application development, CSS and HTML formatting are enabled by default.
 
 ## Installation
 
@@ -68,13 +68,15 @@ pnpm add tailwindcss@4
 
 If you're currently using `@antfu/eslint-config` directly, you can easily migrate:
 
+**Before:**
 ```javascript
-// Before
 import antfu from '@antfu/eslint-config'
 
 export default antfu()
+```
 
-// After
+**After:**
+```javascript
 import { defineConfig } from '@octohash/eslint-config'
 
 export default defineConfig()

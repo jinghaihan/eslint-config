@@ -1,6 +1,5 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import process from 'node:process'
-// @ts-expect-error https://github.com/hyoban/eslint-plugin-tailwindcss
 import tailwindPlugin from 'eslint-plugin-tailwindcss'
 import { isPackageExists } from 'local-pkg'
 import { join } from 'pathe'
@@ -9,11 +8,11 @@ import { join } from 'pathe'
 export function tailwindCSS(dir?: string) {
   const installed = isPackageExists('tailwindcss')
   if (!installed)
-    return
+    return []
 
   const config = findTailwindImportCSS(dir ?? process.cwd())
   if (!config)
-    return
+    return []
 
   return {
     ...tailwindPlugin.configs['flat/recommended'],
