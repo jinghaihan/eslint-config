@@ -13,14 +13,16 @@ catalogs:
     '@antfu/eslint-config': ^7.4.3
     eslint: ^10.0.0
     eslint-flat-config-utils: ^3.0.1
-    eslint-plugin-format: ^1.4.0
-    eslint-plugin-tailwindcss: ^4.0.0-beta.0
+    eslint-plugin-better-tailwindcss: ^4.2.0
+    eslint-plugin-catalogs-sort: ^0.0.0-alpha.0
     lint-staged: ^16.2.7
   prod:
+    '@antfu/install-pkg': ^1.1.0
+    find-up-simple: ^1.0.1
     local-pkg: ^1.1.2
     pathe: ^2.0.3
+    tinyglobby: ^0.2.15
   test:
     vitest: ^4.0.18
   types:
-    '@types/eslint-plugin-tailwindcss': ^3.17.0
     '@types/node': ^24.10.13
