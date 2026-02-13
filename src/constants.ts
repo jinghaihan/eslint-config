@@ -28,8 +28,6 @@ export const REPOSITORY_ROOT_FILES = [
   'deno.lock',
 ]
 
-export const TAILWIND_PLUGIN_NAME = `eslint-plugin-better-tailwindcss`
-
 export const TAILWIND_V3_CONFIG_PATTERNS = [
   '**/tailwind.config.ts',
   '**/tailwind.config.mjs',

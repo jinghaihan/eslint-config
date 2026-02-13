@@ -54,7 +54,6 @@
   "dependencies": {
     "@antfu/eslint-config": "catalog:lint",
     "eslint-plugin-catalogs-sort": "catalog:lint",
-    "@antfu/install-pkg": "catalog:prod",
     "find-up-simple": "catalog:prod",
     "local-pkg": "catalog:prod",
     "pathe": "catalog:prod",

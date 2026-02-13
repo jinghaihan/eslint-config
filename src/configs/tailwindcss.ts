@@ -1,13 +1,12 @@
 import type { TypedFlatConfigItem } from '@antfu/eslint-config'
 import type { OptionsTailwindcss } from '../types'
 import { readFile } from 'node:fs/promises'
-import { GLOB_HTML, GLOB_SRC, GLOB_VUE, interopDefault } from '@antfu/eslint-config'
-import { getPackageInfo, isPackageExists } from 'local-pkg'
+import { ensurePackages, GLOB_HTML, GLOB_SRC, GLOB_VUE, interopDefault } from '@antfu/eslint-config'
+import { getPackageInfo } from 'local-pkg'
 import { basename, resolve } from 'pathe'
 import { glob } from 'tinyglobby'
 import {
   DEFAULT_IGNORE_PATHS,
-  TAILWIND_PLUGIN_NAME,
   TAILWIND_V3_CONFIG_PATTERNS,
   TAILWIND_V4_IMPORT_RE,
 } from '../constants'
@@ -18,9 +17,9 @@ export async function tailwindcss(options: OptionsTailwindcss = {}): Promise<Typ
   if (!pkg || !pkg.version)
     return []
 
-  const { installPackage } = await import('@antfu/install-pkg')
-  if (!isPackageExists(TAILWIND_PLUGIN_NAME))
-    await installPackage(TAILWIND_PLUGIN_NAME, { dev: true })
+  await ensurePackages([
+    'eslint-plugin-better-tailwindcss',
+  ])
 
   const version = pkg.version
   const {

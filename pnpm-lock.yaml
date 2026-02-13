@@ -48,9 +48,6 @@ catalogs:
       specifier: ^16.2.7
       version: 16.2.7
   prod:
-    '@antfu/install-pkg':
-      specifier: ^1.1.0
-      version: 1.1.0
     find-up-simple:
       specifier: ^1.0.1
       version: 1.0.1
@@ -79,9 +76,6 @@ importers:
       '@antfu/eslint-config':
         specifier: catalog:lint
         version: 7.4.3(@vue/compiler-sfc@3.5.17)(eslint-plugin-format@1.4.0(eslint@10.0.0(jiti@2.6.1)))(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3)(vitest@4.0.18(@types/node@24.10.13)(jiti@2.6.1)(yaml@2.8.2))
-      '@antfu/install-pkg':
-        specifier: catalog:prod
-        version: 1.1.0
       eslint-plugin-catalogs-sort:
         specifier: catalog:lint
         version: 0.0.0-alpha.0
