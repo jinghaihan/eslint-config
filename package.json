@@ -53,28 +53,28 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "catalog:lint",
-    "@antfu/install-pkg": "catalog:prod",
     "eslint-plugin-catalogs-sort": "catalog:lint",
+    "@antfu/install-pkg": "catalog:prod",
     "find-up-simple": "catalog:prod",
     "local-pkg": "catalog:prod",
     "pathe": "catalog:prod",
     "tinyglobby": "catalog:prod"
   },
   "devDependencies": {
-    "@octohash/eslint-config": "workspace:*",
+    "tsdown": "catalog:build",
     "@octohash/tsconfig": "catalog:dev",
-    "@types/node": "catalog:types",
     "bumpp": "catalog:dev",
+    "pncat": "catalog:dev",
+    "simple-git-hooks": "catalog:dev",
+    "taze": "catalog:dev",
+    "typescript": "catalog:dev",
     "eslint": "catalog:lint",
     "eslint-flat-config-utils": "catalog:lint",
     "eslint-plugin-better-tailwindcss": "catalog:lint",
     "lint-staged": "catalog:lint",
-    "pncat": "catalog:dev",
-    "simple-git-hooks": "catalog:dev",
-    "taze": "catalog:dev",
-    "tsdown": "catalog:build",
-    "typescript": "catalog:dev",
-    "vitest": "catalog:test"
+    "vitest": "catalog:test",
+    "@types/node": "catalog:types",
+    "@octohash/eslint-config": "workspace:*"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
