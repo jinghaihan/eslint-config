@@ -4,9 +4,45 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
+A personal ESLint config, built as an extension of
+[`@antfu/eslint-config`](https://github.com/antfu/eslint-config).
+
+## Install
+
 ```bash
-pnpm add -D @octohash/eslint-config
+pnpm add -D @octohash/eslint-config eslint
 ```
+
+## Usage
+
+```ts
+import { defineConfig } from '@octohash/eslint-config'
+
+export default defineConfig()
+```
+
+## What This Adds
+
+- Adds first-class `Tailwind CSS` linting/formatting rules powered by
+  [`eslint-plugin-better-tailwindcss`](https://github.com/schoero/eslint-plugin-better-tailwindcss)
+- Includes `catalogs-sort` rules for consistent dependency catalog ordering
+
+## Tailwind CSS
+
+No extra setup is required in most projects:
+
+- Tailwind v4: auto-detects a CSS entry that imports `tailwindcss`
+- Tailwind v3: auto-detects `tailwind.config.*`
+
+You can still override with `settings.entryPoint` or `settings.tailwindConfig`
+when needed.
+
+## Credits
+
+Inspired by
+[`@antfu/eslint-config`](https://github.com/antfu/eslint-config)
+and
+[`eslint-config-hyoban`](https://github.com/hyoban/eslint-config-hyoban).
 
 ## License
 
