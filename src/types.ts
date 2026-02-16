@@ -2,18 +2,13 @@ import type {
   Awaitable,
   OptionsConfig,
   OptionsFiles,
-  OptionsFormatters,
   OptionsOverrides,
   TypedFlatConfigItem,
 } from '@antfu/eslint-config'
 import type { Linter } from 'eslint'
 import type { FlatConfigComposer } from 'eslint-flat-config-utils'
 
-export interface Options extends Omit<AntfuOptions, 'formatters'> {
-  formatters?: boolean | FormattersOptions
-}
-
-export interface FormattersOptions extends OptionsFormatters {
+export interface Options extends AntfuOptions {
   tailwindcss?: boolean | OptionsTailwindcss
 }
 
