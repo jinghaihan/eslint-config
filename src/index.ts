@@ -3,10 +3,7 @@ import antfu from '@antfu/eslint-config'
 import { octohash, sortPackageJson, tailwindcss } from './configs'
 
 export function defineConfig(options?: Options, ...userConfigs: UserConfig) {
-  const config = antfu(
-    mergeOptions(options),
-    ...userConfigs,
-  )
+  const config = antfu(mergeOptions(options), ...userConfigs)
 
   const enableTailwindCSS = typeof options?.tailwindcss === 'boolean' || options?.tailwindcss
   if (enableTailwindCSS) {
@@ -24,10 +21,14 @@ export function defineConfig(options?: Options, ...userConfigs: UserConfig) {
 }
 
 function mergeOptions(options?: Options) {
+  const formatters = typeof options?.formatters === 'object'
+    ? options.formatters
+    : typeof options?.formatters === 'boolean'
+      ? options.formatters
+      : undefined
+
   return {
     ...options,
-    formatters: {
-      ...(typeof options?.formatters === 'object' ? options.formatters : {}),
-    },
+    formatters,
   }
 }
