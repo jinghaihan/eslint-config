@@ -5,7 +5,11 @@ export async function octohash(): Promise<TypedFlatConfigItem[]> {
     {
       name: 'octohash/octohash/rules',
       rules: {
+        // PNPM
         'pnpm/yaml-enforce-settings': 'off',
+
+        // Markdown
+        'markdown/no-unused-definitions': 'off',
       },
     },
   ]
