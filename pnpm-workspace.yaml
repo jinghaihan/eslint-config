@@ -20,7 +20,6 @@ catalogs:
     find-up-simple: ^1.0.1
     local-pkg: ^1.1.2
     pathe: ^2.0.3
-    tinyglobby: ^0.2.15
   test:
     vitest: ^4.0.18
   types:

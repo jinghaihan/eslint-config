@@ -57,9 +57,6 @@ catalogs:
     pathe:
       specifier: ^2.0.3
       version: 2.0.3
-    tinyglobby:
-      specifier: ^0.2.15
-      version: 0.2.15
   test:
     vitest:
       specifier: ^4.0.18
@@ -88,9 +85,6 @@ importers:
       pathe:
         specifier: catalog:prod
         version: 2.0.3
-      tinyglobby:
-        specifier: catalog:prod
-        version: 0.2.15
     devDependencies:
       '@octohash/eslint-config':
         specifier: workspace:*
