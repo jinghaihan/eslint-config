@@ -61,6 +61,7 @@ export async function sortPackageJson(): Promise<TypedFlatConfigItem[]> {
               'husky',
               'simple-git-hooks',
               'lint-staged',
+              'nano-staged',
               'eslintConfig',
             ],
             pathPattern: '^$',

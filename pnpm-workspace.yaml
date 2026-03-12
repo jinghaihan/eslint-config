@@ -1,21 +1,21 @@
 packages: []
 catalogs:
   build:
-    tsdown: ^0.20.3
+    tsdown: ^0.21.2
   dev:
     '@octohash/tsconfig': ^0.2.0
     bumpp: ^10.4.1
-    pncat: ^0.10.2
+    nano-staged: ^0.9.0
+    pncat: ^0.10.4
     simple-git-hooks: ^2.13.1
-    taze: ^19.9.2
+    taze: ^19.10.0
     typescript: ^5.9.3
   lint:
-    '@antfu/eslint-config': ^7.6.0
-    eslint: ^10.0.2
-    eslint-flat-config-utils: ^3.0.1
-    eslint-plugin-better-tailwindcss: ^4.3.0
+    '@antfu/eslint-config': ^7.7.0
+    eslint: ^10.0.3
+    eslint-flat-config-utils: ^3.0.2
+    eslint-plugin-better-tailwindcss: ^4.3.2
     eslint-plugin-catalogs-sort: ^0.0.0-alpha.0
-    lint-staged: ^16.2.7
   prod:
     find-up-simple: ^1.0.1
     local-pkg: ^1.1.2
@@ -23,4 +23,4 @@ catalogs:
   test:
     vitest: ^4.0.18
   types:
-    '@types/node': ^25.3.0
+    '@types/node': ^25.4.0
