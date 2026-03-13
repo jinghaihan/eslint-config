@@ -27,12 +27,3 @@ export const REPOSITORY_ROOT_FILES = [
   'bun.lockb',
   'deno.lock',
 ]
-
-export const TAILWIND_V3_CONFIG_PATTERNS = [
-  '**/tailwind.config.ts',
-  '**/tailwind.config.mjs',
-  '**/tailwind.config.cjs',
-  '**/tailwind.config.js',
-]
-
-export const TAILWIND_V4_IMPORT_RE = /@import\s+['"]tailwindcss(?:\/[^'"]*)?['"]/
