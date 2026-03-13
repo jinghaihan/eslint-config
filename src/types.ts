@@ -26,15 +26,15 @@ interface Matcher {
 
 export interface OptionsTailwindcss extends OptionsFiles, OptionsOverrides {
   settings?: {
-    entryPoint?: string | undefined
-    tailwindConfig?: string | undefined
-    tsconfig?: string | undefined
-    detectComponentClasses?: boolean | undefined
-    rootFontSize?: number | undefined
-    messageStyle?: 'visual' | 'compact' | 'raw' | undefined
-    attributes?: Array<string | Matcher[]> | undefined
-    callees?: Array<string | Matcher[]> | undefined
-    variables?: Array<string | Matcher[]> | undefined
-    tags?: Array<string | Matcher[]> | undefined
+    entryPoint?: string
+    tailwindConfig?: string
+    tsconfig?: string
+    detectComponentClasses?: boolean
+    rootFontSize?: number
+    messageStyle?: 'visual' | 'compact' | 'raw'
+    attributes?: Array<string | Matcher[]>
+    callees?: Array<string | Matcher[]>
+    variables?: Array<string | Matcher[]>
+    tags?: Array<string | Matcher[]>
   }
 }

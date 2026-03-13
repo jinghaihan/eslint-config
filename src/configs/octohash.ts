@@ -12,7 +12,7 @@ export async function octohash(): Promise<TypedFlatConfigItem[]> {
         'markdown/no-unused-definitions': 'off',
 
         // E18E
-        'e18e/ban-dependencies': 'error',
+        'e18e/prefer-spread-syntax': 'off',
       },
     },
   ]
