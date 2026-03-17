@@ -7,12 +7,8 @@ export async function octohash(): Promise<TypedFlatConfigItem[]> {
       rules: {
         // PNPM
         'pnpm/yaml-enforce-settings': 'off',
-
         // Markdown
         'markdown/no-unused-definitions': 'off',
-
-        // E18E
-        'e18e/prefer-spread-syntax': 'off',
       },
     },
   ]
