@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "build": "tsdown",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit",
     "test": "vitest",
     "lint": "eslint",
     "deps": "taze major -I",
@@ -80,9 +80,9 @@
     "*": "eslint --fix"
   },
   "inlinedDependencies": {
-    "@types/json-schema": "7.0.15",
-    "@eslint/core": "1.1.1",
     "@eslint/config-helpers": "0.5.3",
-    "eslint-flat-config-utils": "3.0.2"
+    "@eslint/core": "1.1.1",
+    "@types/json-schema": "7.0.15",
+    "eslint-flat-config-utils": "3.1.0"
   }
 }

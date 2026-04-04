@@ -6,6 +6,8 @@ export default defineConfig({
   dts: {
     resolver: 'tsc',
   },
-  inlineOnly: false,
-  external: ['eslint'],
+  deps: {
+    onlyBundle: false,
+    neverBundle: ['eslint'],
+  },
 })
