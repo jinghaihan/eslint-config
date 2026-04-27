@@ -1,7 +1,7 @@
 packages: []
 catalogs:
   build:
-    tsdown: ^0.21.7
+    tsdown: ^0.21.10
   dev:
     '@octohash/tsconfig': ^0.2.0
     bumpp: ^11.0.1
@@ -9,18 +9,18 @@ catalogs:
     pncat: ^0.11.1
     simple-git-hooks: ^2.13.1
     taze: ^19.11.0
-    typescript: ^6.0.2
+    typescript: ^6.0.3
   lint:
-    '@antfu/eslint-config': ^8.1.1
-    eslint: ^10.2.0
+    '@antfu/eslint-config': ^8.2.0
+    eslint: ^10.2.1
     eslint-flat-config-utils: ^3.1.0
-    eslint-plugin-better-tailwindcss: ^4.3.2
+    eslint-plugin-better-tailwindcss: ^4.4.1
     eslint-plugin-catalogs-sort: ^0.0.0-alpha.0
   prod:
     find-up-simple: ^1.0.1
     local-pkg: ^1.1.2
     pathe: ^2.0.3
   test:
-    vitest: ^4.1.4
+    vitest: ^4.1.5
   types:
-    '@types/node': ^25.5.2
+    '@types/node': ^25.6.0
