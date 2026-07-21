@@ -4,7 +4,7 @@ allowBuilds:
   simple-git-hooks: true
 catalogs:
   build:
-    tsdown: ^0.22.3
+    tsdown: ^0.22.12
   dev:
     bumpp: ^11.1.0
     nano-staged: ^1.0.2
@@ -14,15 +14,15 @@ catalogs:
     typescript: ^6.0.3
   lint:
     '@antfu/eslint-config': ^9.1.0
-    eslint: ^10.5.0
+    eslint: ^10.7.0
     eslint-flat-config-utils: ^3.2.0
-    eslint-plugin-better-tailwindcss: ^4.6.0
+    eslint-plugin-better-tailwindcss: ^4.7.0
     eslint-plugin-catalogs-sort: ^0.0.0-alpha.0
   prod:
     find-up-simple: ^1.0.1
     local-pkg: ^1.2.1
     pathe: ^2.0.3
   test:
-    vitest: ^4.1.9
+    vitest: ^4.1.10
   types:
-    '@types/node': ^26.0.1
+    '@types/node': ^26.1.1
