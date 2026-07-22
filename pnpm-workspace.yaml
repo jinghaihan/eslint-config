@@ -1,3 +1,5 @@
+minimumReleaseAgeExclude:
+  - '@antfu/eslint-config@9.2.0'
 packages: []
 allowBuilds:
   esbuild: true
@@ -6,14 +8,14 @@ catalogs:
   build:
     tsdown: ^0.22.12
   dev:
-    bumpp: ^11.1.0
+    bumpp: ^12.0.0
     nano-staged: ^1.0.2
     pncat: ^0.12.0
     simple-git-hooks: ^2.13.1
     taze: ^19.14.1
     typescript: ^6.0.3
   lint:
-    '@antfu/eslint-config': ^9.1.0
+    '@antfu/eslint-config': ^9.2.0
     eslint: ^10.7.0
     eslint-flat-config-utils: ^3.2.0
     eslint-plugin-better-tailwindcss: ^4.7.0
