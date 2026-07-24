@@ -1,22 +1,24 @@
 import type { TypedFlatConfigItem } from '@antfu/eslint-config'
 import type { OptionsTailwindcss } from '../types'
+import process from 'node:process'
 import { ensurePackages, GLOB_HTML, GLOB_SRC, GLOB_VUE, interopDefault } from '@antfu/eslint-config'
-import { getPackageInfo } from 'local-pkg'
+import { resolve } from 'pathe'
+import { findPackageInWorkspace } from '../utils'
 
 export async function tailwindcss(options: OptionsTailwindcss = {}): Promise<TypedFlatConfigItem[]> {
-  const pkg = await getPackageInfo('tailwindcss')
-  if (!pkg || !pkg.version)
-    return []
-
-  await ensurePackages([
-    'eslint-plugin-better-tailwindcss',
-  ])
-
   const {
     files = [GLOB_HTML, GLOB_SRC, GLOB_VUE],
     overrides = {},
     settings = {},
   } = options
+  const configuredCwd = settings.cwd ? resolve(process.cwd(), settings.cwd) : process.cwd()
+  const tailwindCwd = await findPackageInWorkspace('tailwindcss', configuredCwd)
+  if (!tailwindCwd)
+    return []
+
+  await ensurePackages([
+    'eslint-plugin-better-tailwindcss',
+  ])
 
   return [
     {
@@ -42,7 +44,10 @@ export async function tailwindcss(options: OptionsTailwindcss = {}): Promise<Typ
         ...overrides,
       },
       settings: {
-        'better-tailwindcss': settings,
+        'better-tailwindcss': {
+          cwd: tailwindCwd,
+          ...settings,
+        },
       },
     },
   ]

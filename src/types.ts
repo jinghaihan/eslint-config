@@ -26,6 +26,7 @@ interface Matcher {
 
 export interface OptionsTailwindcss extends OptionsFiles, OptionsOverrides {
   settings?: {
+    cwd?: string
     entryPoint?: string
     tailwindConfig?: string
     tsconfig?: string

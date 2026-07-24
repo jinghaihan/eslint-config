@@ -29,7 +29,16 @@ export default defineConfig()
 
 ## Tailwind CSS
 
-No extra setup is required in most projects:
+Enable Tailwind CSS support explicitly:
+
+```ts
+export default defineConfig({
+  tailwindcss: true,
+})
+```
+
+Once enabled, Tailwind CSS can be installed in the root package or any package
+in a monorepo. Its project configuration is detected automatically:
 
 - Tailwind v4: auto-detects a CSS entry that imports `tailwindcss`
 - Tailwind v3: auto-detects `tailwind.config.*`

@@ -5,17 +5,17 @@ import { octohash, sortPackageJson, tailwindcss } from './configs'
 export function defineConfig(options?: Options, ...userConfigs: UserConfig) {
   const config = antfu(mergeOptions(options), ...userConfigs)
 
-  const enableTailwindCSS = typeof options?.tailwindcss === 'boolean' || options?.tailwindcss
+  const enableTailwindCSS = options?.tailwindcss
   if (enableTailwindCSS) {
     config
-      .append(tailwindcss(typeof enableTailwindCSS === 'boolean' ? {} : enableTailwindCSS))
+      .append(tailwindcss(enableTailwindCSS === true ? {} : enableTailwindCSS))
       .renamePlugins({
         'better-tailwindcss': 'tailwindcss',
       })
   }
 
   config.append(sortPackageJson())
-  config.append(octohash())
+  config.append(octohash(options))
 
   return config
 }
