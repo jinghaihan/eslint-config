@@ -62,6 +62,19 @@ describe.sequential('defineConfig', () => {
     })
   })
 
+  it('does not lint HTML without an HTML parser', async () => {
+    await withTailwindWorkspace(async () => {
+      const eslint = new ESLint({
+        overrideConfig: await defineConfig({ tailwindcss: true }),
+        overrideConfigFile: true,
+      })
+
+      const config = await eslint.calculateConfigForFile('packages/ui/index.html')
+
+      expect(config).toBeUndefined()
+    })
+  })
+
   it('keeps Tailwind CSS disabled when explicitly set to false', async () => {
     await withTailwindWorkspace(async () => {
       const configs = await defineConfig({ tailwindcss: false })

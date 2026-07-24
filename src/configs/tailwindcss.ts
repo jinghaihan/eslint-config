@@ -1,13 +1,13 @@
 import type { TypedFlatConfigItem } from '@antfu/eslint-config'
 import type { OptionsTailwindcss } from '../types'
 import process from 'node:process'
-import { ensurePackages, GLOB_HTML, GLOB_SRC, GLOB_VUE, interopDefault } from '@antfu/eslint-config'
+import { ensurePackages, GLOB_SRC, GLOB_VUE, interopDefault } from '@antfu/eslint-config'
 import { resolve } from 'pathe'
 import { findPackageInWorkspace } from '../utils'
 
 export async function tailwindcss(options: OptionsTailwindcss = {}): Promise<TypedFlatConfigItem[]> {
   const {
-    files = [GLOB_HTML, GLOB_SRC, GLOB_VUE],
+    files = [GLOB_SRC, GLOB_VUE],
     overrides = {},
     settings = {},
   } = options
