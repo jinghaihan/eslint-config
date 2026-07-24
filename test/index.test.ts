@@ -2,6 +2,7 @@ import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { ESLint } from 'eslint'
+import { resolve } from 'pathe'
 import { describe, expect, it } from 'vitest'
 import { defineConfig } from '../src'
 import { tailwindcss } from '../src/configs'
@@ -57,7 +58,7 @@ describe.sequential('defineConfig', () => {
       const rulesConfig = configs.find(config => config.name === 'octohash/tailwindcss/rules')
       const settings = rulesConfig?.settings as Record<string, { cwd?: string }> | undefined
 
-      expect(settings?.['better-tailwindcss']?.cwd).toBe(join(process.cwd(), 'packages/ui'))
+      expect(settings?.['better-tailwindcss']?.cwd).toBe(resolve(process.cwd(), 'packages/ui'))
     })
   })
 
