@@ -53,6 +53,8 @@
   "dependencies": {
     "@antfu/eslint-config": "catalog:lint",
     "eslint-plugin-catalogs-sort": "catalog:lint",
+    "eslint-plugin-slop": "catalog:lint",
+    "eslint-plugin-sonarjs": "catalog:lint",
     "find-up-simple": "catalog:prod",
     "local-pkg": "catalog:prod",
     "pathe": "catalog:prod",
@@ -80,9 +82,9 @@
     "*": "eslint --fix"
   },
   "inlinedDependencies": {
-    "@eslint/config-helpers": "0.5.3",
-    "@eslint/core": "1.1.1",
+    "@eslint/config-helpers": "0.5.5",
+    "@eslint/core": "1.2.1",
     "@types/json-schema": "7.0.15",
-    "eslint-flat-config-utils": "3.1.0"
+    "eslint-flat-config-utils": "3.2.0"
   }
 }

@@ -29,6 +29,7 @@ function mergeOptions(options?: Options) {
 
   return {
     ...options,
+    antislop: options?.antislop ?? true,
     formatters,
   }
 }

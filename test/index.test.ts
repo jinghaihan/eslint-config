@@ -41,7 +41,7 @@ describe.sequential('defineConfig', () => {
     expect(config?.rules?.['markdown/no-unused-definitions']?.[0]).toBe(0)
   })
 
-  it('does not lint Markdown when Markdown support is disabled', async () => {
+  it('does not enable Markdown rules when Markdown support is disabled', async () => {
     const eslint = new ESLint({
       overrideConfig: await defineConfig({ markdown: false }),
       overrideConfigFile: true,
@@ -49,7 +49,7 @@ describe.sequential('defineConfig', () => {
 
     const config = await eslint.calculateConfigForFile('README.md')
 
-    expect(config).toBeUndefined()
+    expect(config?.rules?.['markdown/no-unused-definitions']).toBeUndefined()
   })
 
   it('enables Tailwind CSS when it is installed in a workspace package', async () => {
@@ -62,7 +62,7 @@ describe.sequential('defineConfig', () => {
     })
   })
 
-  it('does not lint HTML without an HTML parser', async () => {
+  it('does not enable an HTML parser without HTML support', async () => {
     await withTailwindWorkspace(async () => {
       const eslint = new ESLint({
         overrideConfig: await defineConfig({ tailwindcss: true }),
@@ -71,7 +71,7 @@ describe.sequential('defineConfig', () => {
 
       const config = await eslint.calculateConfigForFile('packages/ui/index.html')
 
-      expect(config).toBeUndefined()
+      expect(config?.languageOptions?.parser?.name).toBe('espree')
     })
   })
 
