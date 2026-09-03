@@ -1,22 +1,25 @@
 minimumReleaseAgeExclude:
   - '@antfu/eslint-config@9.2.0'
+
 packages: []
+
 allowBuilds:
   esbuild: true
   simple-git-hooks: true
+
 catalogs:
   build:
-    tsdown: ^0.22.12
+    tsdown: ^0.22.14
   dev:
-    bumpp: ^12.0.0
+    bumpp: ^12.2.2
     nano-staged: ^1.0.2
-    pncat: ^0.12.0
-    simple-git-hooks: ^2.13.1
-    taze: ^19.14.1
+    pncat: ^0.13.2
+    simple-git-hooks: ^2.14.0
+    taze: ^21.1.0
     typescript: ^6.0.3
   lint:
-    '@antfu/eslint-config': ^9.2.0
-    eslint: ^10.7.0
+    '@antfu/eslint-config': ^9.4.1
+    eslint: ^10.9.1
     eslint-flat-config-utils: ^3.2.0
     eslint-plugin-better-tailwindcss: ^4.7.0
     eslint-plugin-catalogs-sort: ^0.0.0-alpha.0
@@ -24,8 +27,8 @@ catalogs:
     find-up-simple: ^1.0.1
     local-pkg: ^1.2.1
     pathe: ^2.0.3
-    tinyglobby: ^0.2.15
+    tinyglobby: ^0.2.17
   test:
-    vitest: ^4.1.10
+    vitest: ^4.1.11
   types:
-    '@types/node': ^26.1.1
+    '@types/node': ^26.4.1
