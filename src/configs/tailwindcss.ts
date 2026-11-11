@@ -11,7 +11,9 @@ export async function tailwindcss(options: OptionsTailwindcss = {}): Promise<Typ
     overrides = {},
     settings = {},
   } = options
-  const configuredCwd = settings.cwd ? resolve(process.cwd(), settings.cwd) : process.cwd()
+  const configuredCwd = settings.cwd
+    ? resolve(process.cwd(), settings.cwd)
+    : process.cwd()
   const tailwindCwd = await findPackageInWorkspace('tailwindcss', configuredCwd)
   if (!tailwindCwd)
     return []

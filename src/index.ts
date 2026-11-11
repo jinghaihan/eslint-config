@@ -8,7 +8,9 @@ export function defineConfig(options?: Options, ...userConfigs: UserConfig) {
   const enableTailwindCSS = options?.tailwindcss
   if (enableTailwindCSS) {
     config
-      .append(tailwindcss(enableTailwindCSS === true ? {} : enableTailwindCSS))
+      .append(tailwindcss(enableTailwindCSS === true
+        ? {}
+        : enableTailwindCSS))
       .renamePlugins({
         'better-tailwindcss': 'tailwindcss',
       })

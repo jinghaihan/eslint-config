@@ -9,7 +9,9 @@ export async function findRepositoryRoot(cwd = process.cwd()): Promise<string> {
   for (const file of REPOSITORY_ROOT_FILES) {
     const filepath = await findUp(file, {
       cwd,
-      ...(file === '.git' ? { type: 'directory' as const } : {}),
+      ...(file === '.git'
+        ? { type: 'directory' as const }
+        : {}),
     })
     if (filepath)
       return dirname(filepath)
@@ -18,8 +20,11 @@ export async function findRepositoryRoot(cwd = process.cwd()): Promise<string> {
 }
 
 export async function findPackageInWorkspace(name: string, cwd = process.cwd()): Promise<string | undefined> {
-  if (isPackageExists(name, { paths: [cwd] }))
+  if (isPackageExists(name, {
+    paths: [cwd],
+  })) {
     return cwd
+  }
 
   const root = await findRepositoryRoot(cwd)
   const packageJsonFiles = await glob(['package.json', '**/package.json'], {
@@ -29,7 +34,9 @@ export async function findPackageInWorkspace(name: string, cwd = process.cwd()):
   })
   const packageDirectories = packageJsonFiles.map(file => resolve(root, dirname(file)))
 
-  return packageDirectories.find(directory => isPackageExists(name, { paths: [directory] }))
+  return packageDirectories.find(directory => isPackageExists(name, {
+    paths: [directory],
+  }))
 }
 
 export function pathDepth(filepath: string): number {
