@@ -29,7 +29,7 @@ async function withTailwindWorkspace<T>(run: () => Promise<T>): Promise<T> {
   }
 }
 
-describe.sequential('defineConfig', () => {
+describe('defineConfig', { concurrent: false }, () => {
   it('disables unused Markdown definitions', async () => {
     const eslint = new ESLint({
       overrideConfig: await defineConfig({ markdown: true }),
